@@ -10,6 +10,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display";
   letter-spacing: 5px;
 }
+.scrollable-box {
+    max-height: 280px; 
+    overflow-y: scroll; 
+    /* border: 1px solid #ccc;  */
+    /* border-color: black; */
+    padding: 5px; 
+  }
+
+  .message-list {
+    list-style-type: disc; 
+    padding:2; 
+  }
 </style>
 <body style="background-color:#f2f0f0;">
 
@@ -25,6 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     </div>
   </div>
 </div>
+
 <br/>
 <br/>
 <br/>
@@ -111,19 +124,3 @@ h1, h2, h3, h4, h5, h6 {
 
   setInterval(changeImage, 1500); 
 </script>
-
-<style>
-  .scrollable-box {
-    max-height: 280px; 
-    overflow-y: scroll; 
-    /* border: 1px solid #ccc;  */
-    /* border-color: black; */
-    padding: 5px; 
-  }
-
-  .message-list {
-    list-style-type: disc; 
-    padding:2; 
-  }
-
-</style>
