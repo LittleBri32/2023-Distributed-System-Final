@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt">
+<title>常見問題</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+html{
+                scroll-behavior: smooth;
+                overflow-x: hidden;
+}
+
+body{
+                /* background-image: url("https://i.postimg.cc/v8V8WRFS/fundo.png"); */
+                /* color: #f2f2f2; */
+                padding: 0;
+                margin: 0;
+                /* font-family: 'Khand', sans-serif; */
+                /* font-weight: lighter; */
+}
+
+a{
+                text-decoration: none;
+}
+
+.container{
+                width: 80%;
+                margin: auto;
+}
+
+#service_infomation1 {
+            /* font-family: 'Khand', sans-serif; */
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            /* margin-left: 50%;
+            margin-right: -50%;
+            position: absolute;
+            left: -120px;
+            top: 80px; */
+}
+
+#service_infomation2 {
+            /* font-family: 'Khand', sans-serif; */
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            /* margin-left: 50%;
+            margin-right: -50%;
+            position: absolute;
+            left: -120px;
+            top: 100px; */
+}
+
+#service_infomation3 {
+            /* font-family: 'Khand', sans-serif; */
+            color: rgb(0, 0, 0);
+            font-size: 15px;
+            /* margin-left: 50%;
+            margin-right: -50%;
+            position: absolute;
+            left: -120px;
+            top: 120px; */
+}
+
+.search-bar {
+            width: 20%;
+            position: absolute;
+            top: 20%;
+            left: 40%;
+            /* transform: translate(-50%, -50%); */
+            }
+
+.search {
+            width: 100%;
+            position: relative;
+            display: flex;
+            }
+
+#search-input {
+            width: 100%;
+            border: 3px solid #91aeb1;
+            border-right: none;
+            padding: 5px;
+            height: 36px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #000000;
+}
+
+#search-button {
+            width: 40px;
+            height: 36px;
+            border: 1px solid #91aeb1;
+            background: #91aeb1;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+}
+
+.envoy{
+            position: fixed; 
+            top: 33%; right: 28%; 
+            transform: translate(100%, -50%); 
+            background-color: rgba(145, 174, 177, 0.5);
+            border-radius: 5px 5px 5px 5px;
+            padding: 5px;
+}
+
+.question {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.answer {
+  display: none;
+  margin-top: 10px;
+}
+
+</style>
+
+
+<body style="background-color:#f2f0f0;">
+    <div class="w3-top">
+        <div class="w3-bar w3-padding w3-card" style="background-color: black; letter-spacing:4px; height: 70px;" >
+          <a href="http://localhost:5000" class="w3-bar-item w3-button" style="color: white; font-size:20px;">拓元搶票系統</a>
+          <!-- Right-sided navbar links. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="http://localhost:8080/service/3" class="w3-bar-item w3-button" style="color: white; font-size:20px;">節目資訊</a>
+            <a href="http://localhost:8080/service/2" class="w3-bar-item w3-button" style="color: white; font-size:20px;">我的訂單</a>
+            <a href="http://localhost:8080/service/1" class="w3-bar-item w3-button" style="color: white; font-size:20px;">常見問題</a>
+          </div>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <div class = "envoy">
+        {% if name=="" %}
+        {% else %}
+        <p id="service_infomation1">Hello from behind Envoy (service {{service}})</p>
+        <p id="service_infomation2">hostname: {{hostnameOne}} resolved</p>
+        <p id="service_infomation3">hostname: {{hostnameTwo}}</p>
+        {% endif %}
+    </div>
+    <div class="w3-content" style="max-width:1100px; height: 530px;">
+        <div class="w3-col">
+            <h1 class="w3-center">常見問題</h1><br>                    
+                <ul class="message-list">
+                    <li>
+                        <div class="question">購票流程說明</div>
+                        <div class="answer" id="購票流程說明">本系統僅限於網站購票，並且支援行動裝置，可使用手機購票。（不提供便利商店機台購票服務）
+                            <br/><br/>
+                            1. 會員登入：請先成為本站會員並完成手機號碼驗證，才能開始購票。（會員加入辦法）
+                            <br/>
+                            2. 選擇活動：請於【節目資訊】頁中，點選欲購買的節目，並請於購票前，務必詳閱您購買節目的節目介紹、注意事項、購票提醒、取票提醒、退票說明的內容。
+                            <br/>
+                            3. 點選立即購票：請點選【立即購票】。正式開賣前，只要重新點選【立即購票】，開賣倒數的時間就會更新。
+                            <br/>
+                            4. 點選立即訂購：請點選欲購買場次的【立即訂購】，此按鈕於正式開賣後才會出現，正式開賣前，僅顯示開賣倒數時間。購票時請留意，不可跨場次訂購。
+                            <br/>
+                            5. 選擇選位方式/區域：請選擇選位方式及欲購買的區域。各區域顯示的剩餘數量僅供當下參考，因前後同時可能有其他購票者也在進行訂購中，剩餘數量實際是隨著時間不斷變化。（選位方式說明）
+                            <br/>
+                            6. 選擇張數：請選擇欲購買的票種及張數，若於上個步驟選擇【自行選位】，本系統將自動帶入所選擇的座位數量。每個節目可購買的張數限制不同，請詳閱您購買節目的【購票提醒】。
+                            <br/>
+                            7. 選擇付款及取票方式，並進行結帳：請在倒數10分鐘內選擇付款方式及取票方式，並確認本次交易訂單明細，若無誤則可進行結帳。每個節目的付款方式及取票方式設定不同，請詳閱您購買節目的【購票提醒】及【取票提醒】。（付款方式說明／取票方式說明）
+                            <br/>
+                            8. 確認交易成功訂單：完成訂購後，網頁將顯示此次訂購資訊，也可至【訂單查詢】中查看。（訂單查詢說明）
+                            <br/>
+                            *購票時，請勿使用多視窗或多裝置進行購票，以免發生購票失敗或異常。
+                            <br/><br/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">身心障礙優惠票券購票說明</div>
+                        <div class="answer">身心障礙票券僅限持有【中華民國身心障礙證明】，且該證件的【有效期限】於演出當日仍屬有效者，才可購買身心障礙優惠票，該證件上的【必要陪同者優惠措施】有相關註記者，才可購買陪同票。
+                            <br/><br/>
+                        </div>
+                    <li>
+                        <div class="question">選位方式說明</div>
+                        <div class="answer">本系統提供下列兩種選位方式。每個節目的選位方式設定不同，請詳閱您購買節目的【購票提醒】。
+                            <br/><br/>
+ 
+
+                            1. 電腦配位：由系統直接依照想要購買的張數自動配位。使用電腦配位可加快購票的速度。
+                            <br/>
+                            (1) 若選購劃位區域，本系統將從最前方且有空位排數中，找出符合張數條件的連續座位，並非隨機選位。
+                            <br/>
+                            (2) 若選購不劃位區域，本系統將配出符合購買條件的張數。
+                            <br/>
+                            (3) 不劃位搖滾區，若為依序號排隊入場時，其序號僅供入場整隊用，若有消費者未結帳或退票，空出的序號有可能會被較晚買票的消費者購買，且同筆訂單可能會有序號不連號情形發生。
+                            <br/>
+                            (4) 若剩餘空位的數量不滿足張數條件，或是剩餘的空位已經沒有連續座位，則電腦配位將會顯示【已無足夠數量】或【已無足夠連續座位】等相關訊息，可選擇其他區域或重新調整張數需求後，再送出訂購需求。
+                            <br/>
+                            <br/>
+                            
+                            2. 自行選位：由購票者自行選擇想要購買的座位，座位點選時，可以不連號。
+                            <br/>
+                            (1) 若選購劃位區域，請點選想要購票的座位，再按下確認送出，因同時可能有其他購票者也選擇相同座位，選購成功與否，依本系統顯示資訊為準。
+                            <br/>
+                            (2) 若選購不劃位區域，則不提供自行選位的功能，一律使用電腦配位。
+                            <br/>
+                            <br/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">訂單查詢說明</div>
+                        <div class="answer">每筆訂單成立後，皆可在【訂單查詢】中查看該筆訂單的相關資訊，訂單資料保留至活動結束後三個月，其欄位包含有：
+                            <br/><br/>
+                            1. 訂單編號：為8碼數字，有客服處理需求時，請務必提供此組編號，以利查詢。
+                            <br/>
+                            <br/>
+                            
+                            2. 訂購時間：為該訂單訂購成功的交易時間。
+                            <br/>
+                            <br/>
+                            
+                            3. 購買節目：包含有下列資訊：
+                            <br/>
+                            (1) 基本資訊包含有節目名稱、付款方式、配送方式。
+                            <br/>
+                            (2) 未完成【ATM虛擬帳號付款】、【7-11 ibon付款】或【全家FamiPort付款】前，相關付款資訊，將以紅字顯示於此。(若逾期未付款，訂單將取消不予保留。)
+                            <br/>
+                            (3) 付款完成，但未完成【7-11 ibon取票】或【全家 FamiPort取票】前，相關取票資訊，將以紅字顯示於此。
+                            <br/>
+                            (4) 若選擇【電子票券】，其QR Code票券開啟連結，將顯示於此。
+                            <br/>
+                            <br/>
+                            
+                            4. 訂單狀態：顯示該筆訂單最新的處理進度，常見的訂單狀態如下：
+                            <br/>
+                            (1) 訂單成立：訂購成功或付款完成時。
+                            <br/>
+                            (2) 等待付款：訂單尚未完成付款。(若逾期未付款，訂單將取消不予保留。)
+                            <br/>
+                            (3) 等待取票／等待現場取票：訂單尚未完成取票。
+                            <br/>
+                            (4) 等待配送：訂單尚未進行配送。
+                            <br/>
+                            (5) 已配送／已寄達：訂單已交付配送單位／訂單已完成配送。
+                            <br/>
+                            (6) 取票完成：訂單已完成取票。
+                            <br/>
+                            (7) 個人因事退票／主辦因素退票：退票申請處理完成。(退款作業時間為退票申請處理完成後約20個工作天，刷卡退款時間將依發卡行之作業時間為準。)
+                            <br/>
+                            (8) 信用卡刷卡中／刷卡失敗：信用卡付款作業進行中／信用卡付款失敗。
+                            <br/>
+                            (9) 請與客服聯絡：請儘速與本系統客服聯絡（聯繫我們），一般常見問題多為付款金額有誤或訂單資料異常。
+                            <br/>
+                            <br/>
+                            
+                            5. 展開明細：
+                            <br/>
+                            (1) 基本資訊包含有票券的場次、日期、場地、座位區排號、票種票價、張數。
+                            <br/>
+                            (2) 若選擇【國內配送】，其收件資料將顯示於此。
+                            <br/>
+                            (3) 若為實名制或紀念姓名等購票，其姓名等資訊將顯示於此。
+                            <br/><br/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">付款方式說明</div>
+                        <div class="answer">本系統提供的付款方式如下所示，每個節目的付款方式設定不同，請詳閱您購買節目的【購票提醒】。
+                            <br/>
+                            <br/>
+                            1. 信用卡付款。
+                            <br/>
+                            2. ATM虛擬帳號付款。
+                            <br/>
+                            3. 7-11 ibon付款。
+                            <br/>
+                            4. 全家 FamiPort付款。
+                            <br/>
+                            <br/>
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">信用卡付款方式說明</div>
+                        <div class="answer">【信用卡付款】僅限VISA、MasterCard、JCB，無法使用美國運通及大來卡，部份節目開放使用銀聯卡，請詳閱您購買節目的【購票提醒】。購票前請先確認信用卡額度是否足夠。
+                            <br/><br/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">ATM虛擬帳號付款方式說明</div>
+                        <div class="answer">請在本系統顯示的【繳款期限】時間內，將【繳費金額】轉帳至指定的【虛擬帳戶】中，轉帳完成後請等待10~15分鐘，待本系統和銀行端核對金額後，【訂單狀態】會自動更新。若逾期未付款，ATM虛擬帳號即失效不再存在，訂單將取消不予以保留。
+                            <br/><br/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">7-11 ibon付款方式說明</div>
+                        <div class="answer">(1) 請於ibon機台點選：票券中心→售票系統→取票→拓元售票系統。
+                            <br/>
+                            (2) 請依照系統畫面指示，分別輸入【取票序號、取票號碼】，並列印付款繳費單。
+                            <br/>
+                            (3) 請持付款繳費單，至該店櫃檯付款及取票，每筆需外加取票手續費30元。
+                            <br/>
+                            <br/>
+                            </div>
+                    </li>
+                    <li>
+                        <div class="question">全家 FamiPort付款方式說明</div>
+                        <div class="answer">(1) 請於FamiPort機台點選：票券→展演娛樂→拓元售票系統。
+                            <br/>
+                            (2) 請依照系統畫面指示，分別輸入【取票序號、取票號碼】，並列印付款繳費單。
+                            <br/>
+                            (3) 請持付款繳費單，至該店櫃檯付款及取票，每筆需外加取票手續費30元。
+                            <br/>
+                            <br/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">退票方式說明</div>
+                        <div class="answer">依文化部於中華民國107年5月16日文藝字第10710128232號公告修定之『藝文表演票券定型化契約應記載及不得記載事項』第六條 退換票機制，主辦單位可於四個退票方案擇一進行辦理，因此每個節目的退票方案不同，請詳閱您購買節目的【退票說明】。
+                            <br/><br/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question">換票方式說明</div>
+                        <div class="answer">換票等同於退票，請將原先購買的票券辦理退票，再另行購買。每個節目的退票方案不同，請詳閱您購買節目的【退票說明】。
+                            <br/><br/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="question" id = "節目延期">節目延期或節目取消的退票方式說明</div>
+                        <div class="answer">若節目因故延期或取消，退票辦法將另外公告於本系統的【最新消息】，每個節目的退票方案不同，請詳閱您購買節目的相關公告。
+                            <br/><br/>
+                        </div>
+                    </li>
+                
+                </ul>
+            
+            
+        </div>
+    </div>
+    
+    <div class="w3-col w3-center">
+        <p class="w3-center">Copyright © 2023, NCCU </p>
+    </div>
+</body>
+</html>
+
+<script>
+    var questions = document.getElementsByClassName("question");
+
+    for (var i = 0; i < questions.length; i++) {
+        questions[i].addEventListener("click", function() {
+        var answer = this.nextElementSibling;
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+        } else {
+            answer.style.display = "block";
+        }
+        });
+    }
+</script>
