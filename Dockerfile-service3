@@ -1,0 +1,13 @@
+FROM envoyproxy/envoy-alpine-dev:latest
+
+RUN apk update && apk add py3-pip bash curl
+# RUN pip3 install -q Flask==0.11.1 requests==2.18.4 
+RUN pip3 install -q Flask==2.3.2 requests==2.18.4 mysql-connector-python==8.0.33
+RUN mkdir /code
+ADD ./service3.py /code
+RUN mkdir /code/templates
+ADD ./index3.html /code/templates
+ADD ./start_service3.sh /usr/local/bin/start_service.sh
+
+RUN chmod u+x /usr/local/bin/start_service.sh
+ENTRYPOINT ["/bin/sh", "/usr/local/bin/start_service.sh"]
