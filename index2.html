@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>拓元搶票系統-查詢訂單</title>
+        <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+        <style type="text/css">
+            @import url('https://fonts.googleapis.com/css?family=Khand');
+            @import url('https://fonts.googleapis.com/css?family=Oswald');
+            @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.h1{
+    font-size: 5em;
+    text-align: center;
+    border-top: #f2f2f2 2px solid;
+    border-bottom: #f2f2f2 2px solid;
+}
+
+section h1{
+    color: #f2f2f2;
+    font-size: 4em;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(37, 28, 15, 0.534);
+}
+
+.search-bar {
+    width: 25%;
+    position: absolute;
+    top: 3%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+#search-input {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #000000;
+}
+
+.text-template {
+    border-style: groove;
+}
+
+        </style>
+    </head>
+<body>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- <div class="search-bar">
+        <div class="search">
+            <input type="text" name="search" placeholder="Search..." id="search-input">
+            <input type="submit" name="send" value="send">
+        </div>
+    </div> -->
+
+
+    <!------------------- add -------------------->
+    <!-- search bar -->
+    <form id="search1" method="post">
+        <input type="text" id="phoneNumber" name="phone-number" placeholder="Cel.">
+        <input type="submit" name="send" value="send">
+    </form>
+    <section id="home" class="home"></section>
+    {% if result is none %}
+    <div class="item">
+        <span>此電話號碼查無訂單</span>
+    </div>
+    {% else %}
+        {% for ticket_info in result: %}
+            {% set _, cellphone, name, ticketNum, price, totalPrice, date = ticket_info %}
+            <div class="text-template">
+                <span class="text-cellphone">手機號碼:</span>
+                <span>{{ cellphone }}</span><br>
+                <span class="text-name">表演名稱:</span>
+                <span>{{ name }}</span><br>
+                <span class="text-ticketNum">表演門票張數:</span>
+                <span>{{ ticketNum }}</span><br>
+                <span class="text-price">單張門票價格:</span>
+                <span>{{ price }}</span><br>
+                <span class="text-tPrice">總共價格:</span>
+                <span>{{ totalPrice }}</span><br>
+                <span class="text-date">日期:</span>
+                <span>{{ date }}</span><br>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <!------------------- add -------------------->
+
+</body>
+</html>
