@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+            color: black;
+
+        }
+
+        :root {
+            --white-color: #ffffff;
+            --primary-color: #ffd74f;
+            --secondary-color: #f65129;
+            --section-bg-color: #f9f9f9;
+            --site-footer-bg-color: #36363e;
+            --custom-btn-bg-color: #00a05d;
+            --dark-color: #000000;
+            --p-color: #717275;
+            --border-color: #e9eaeb;
+
+            --body-font-family: 'League Spartan', sans-serif;
+
+            --h1-font-size: 62px;
+            --h2-font-size: 48px;
+            --h3-font-size: 36px;
+            --h4-font-size: 32px;
+            --h5-font-size: 24px;
+            --h6-font-size: 22px;
+            --p-font-size: 20px;
+            --btn-font-size: 16px;
+            --copyright-font-size: 14px;
+
+            --border-radius-large: 100px;
+            --border-radius-medium: 20px;
+            --border-radius-small: 10px;
+
+            --font-weight-thin: 100;
+            --font-weight-light: 300;
+            --font-weight-normal: 400;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+        }
+
+        body {
+            background-color: var(--white-color);
+            font-family: var(--body-font-family);
+            padding-top: 70px;
+        }
+
+        /* body {font-family: "Times New Roman", Georgia, Serif;} */
+
+
+        h1 {
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-weight-bold);
+        }
+
+
+
+        .scrollable-box {
+            max-height: 280px;
+            overflow-y: scroll;
+            /* border: 1px solid #ccc;  */
+            /* border-color: black; */
+            padding: 5px;
+        }
+
+        .message-list {
+            list-style-type: disc;
+            padding: 2;
+        }
+
+
+
+        p {
+            color: var(--p-color);
+            font-size: var(--p-font-size);
+            font-weight: var(--font-weight-light);
+        }
+
+        ul li {
+            color: var(--p-color);
+            font-size: var(--p-font-size);
+            font-weight: var(--font-weight-normal);
+        }
+
+        a,
+        button {
+            touch-action: manipulation;
+            transition: all 0.3s;
+        }
+
+        a {
+            color: var(--p-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        b,
+        strong {
+            font-weight: var(--font-weight-bold);
+        }
+
+        .tooplate-red {
+            color: var(--secondary-color);
+        }
+
+        .tooplate-green {
+            color: var(--custom-btn-bg-color);
+        }
+
+        /*---------------------------------------
+  HERO              
+-----------------------------------------*/
+        .hero-section {
+            position: relative;
+            padding-top: 150px;
+            padding-bottom: 150px;
+            min-height: 580px;
+        }
+
+        @media screen and (min-width: 991px) {
+            .hero-section {
+                height: calc(100vh - 70px);
+            }
+        }
+
+
+        .hero-form {
+            background: var(--white-color);
+            border-radius: var(--border-radius-small);
+            padding: 40px;
+            padding-bottom: 16px;
+        }
+
+        .hero-icon,
+        .contact-icon {
+            color: var(--secondary-color);
+        }
+
+        .hero-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: 60px auto;
+        }
+
+        .hero-btn-link {
+            background: var(--primary-color);
+            border-radius: var(--border-radius-large);
+            color: var(--white-color);
+            font-size: var(--h4-font-size);
+            width: 64px;
+            height: 64px;
+            line-height: 68px;
+            text-align: center;
+        }
+
+        .hero-btn-link:hover {
+            background: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        /*---------------------------------------
+  CUSTOM FORM               
+-----------------------------------------*/
+        .custom-form .input-group {
+            background-color: var(--white-color);
+            border: 2px solid var(--border-color);
+            border-radius: .25rem;
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .custom-form .textarea-group label {
+            margin-top: 13px;
+        }
+
+        .custom-form label {
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+
+        .custom-form .form-control {
+            background-color: var(--white-color);
+            box-shadow: none;
+            border: 0;
+            color: var(--p-color);
+            padding-top: 12px;
+            padding-bottom: 12px;
+            outline: none;
+        }
+
+        .custom-form .form-control:hover,
+        .custom-form .form-control:focus {
+            border-color: var(--secondary-color);
+        }
+
+        .custom-form button[type="submit"] {
+            background: var(--secondary-color);
+            border: none;
+            color: var(--white-color);
+            font-size: var(--p-font-size);
+            font-weight: var(--font-weight-normal);
+            transition: all 0.3s;
+            margin-bottom: 0;
+        }
+
+        .custom-form button[type="submit"]:hover,
+        .custom-form button[type="submit"]:focus {
+            background: var(--primary-color);
+            border-color: transparent;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- <link href="css/owl.carousel.min.css" rel="stylesheet"> -->
+
+    <!-- <link href="css/tooplate-moso-interior.css" rel="stylesheet"> -->
+</head>
+
+
+<body style="background-color:#f2f0f0;">
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-padding w3-card" style="background-color: black; letter-spacing:4px; height: 70px;">
+            <a href=" " class="w3-bar-item w3-button" style="color: white; font-size:20px;">拓元搶票系統</a>
+            <!-- Right-sided navbar links. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="http://localhost:8080/service/3" class="w3-bar-item w3-button"
+                    style="color: white; font-size:20px;">節目資訊</a>
+                <a href="http://localhost:8080/service/2" class="w3-bar-item w3-button"
+                    style="color: white; font-size:20px;">我的訂單</a>
+                <a href="http://localhost:8080/service/1" class="w3-bar-item w3-button"
+                    style="color: white; font-size:20px;">常見問題</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero-section hero-slide d-flex justify-content-center align-items-center" id="section_1">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 text-center mx-auto">
+                    <div class="hero-section-text">
+                        <form class="custom-form hero-form" action="#" method="post" role="form">
+                            <h1 class="hero-title text-black mt-2 mb-4">訂單查詢</h1>
+                            <div class="row">
+                                <div class="col-lg-5 col-md-6 col-12 flex-grow-1">
+                                    <div class="input-group align-items-center">
+                                        <label for="product-name">輸入電話 :</label>
+                                        <input type="text" name="phone-number" id="phone-number" class="form-control"
+                                            placeholder="09XX-XXX-XXX" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-6 col-12">
+                                    <button type="submit" class="form-control">Search</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="hero-btn d-flex justify-content-center align-items-center">
+                            <a class="bi-arrow-down hero-btn-link smoothscroll" href="#section_2"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% if result is none %}
+    <section class="about-section section-padding" id="section_2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-12">
+                    <h2 class="mt-2 mb-4"><span class="text-muted">此電話號碼查無訂單</span> Moso</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    {% for ticket_info in result %}
+    {% set _, cellphone, name, ticketNum, price, totalPrice, date = ticket_info %}
+    {% if loop.index % 2 == 0 %}
+    <section class="about-section section-padding bg-white" id="section_2">
+        {% else %}
+        <section class="about-section section-padding bg-gray" id="section_2">
+            {% endif %}
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-12">
+                        <h2 class="mt-2 mb-4"><span class="text-muted">你的訂單</span></h2>
+                        <h4 class="text-muted mb-3"><span class="text-cellphone">手機號碼:0{{ cellphone }}</span></h4>
+                        <h4 class="text-muted mb-3"><span class="text-name">表演名稱:{{ name }}</span></h4>
+                        <h4 class="text-muted mb-3"><span class="text-ticketNum">表演門票張數:{{ ticketNum }}</span></h4>
+                        <h4 class="text-muted mb-3"><span class="text-price">單張門票價格:{{ price }}</span></h4>
+                        <h4 class="text-muted mb-3"><span class="text-tPrice">總共價格:{{ totalPrice }}</span></h4>
+                        <h4 class="text-muted mb-3"><span class="text-date">日期:{{ date }}</span></h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+        {% endif %}
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+        <!-- <script src="js/click-scroll.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js">
+        </script>
+        <!-- <script src="js/owl.carousel.min.js"></script> -->
+        <script>
+
+            (function ($) {
+
+                "use strict";
+
+                // HERO SLIDE
+                $('.hero-slide').backstretch([
+                    "https://static.tixcraft.com/images/banner/mobile_0aa9ed6de13d1814f458041a518fa2c8.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_0c61f5bf0fcc09d495e69caa8f185e7c.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_4a2c24ce6ccd696a52bc37c0c8f10039.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_8fb143a08524e85f72969e047d5859c4.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_9ef91d850e0d3f5716960a0728a9d3cb.png",
+                    "https://static.tixcraft.com/images/banner/mobile_391c65db0c7a11c826f370a28735b3b6.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_663a76f4ca1dcef4d4549983a7964b70.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_0692a287740f078cc5df20d8e20b9d44.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_723ffaf4ed233fd7263aca519e22da05.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_2459d4e5b9ae77e95b4d051f77142efd.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_20950e788a2319f9de37734e029ce5a5.png",
+                    "https://static.tixcraft.com/images/banner/mobile_66613af617d99a67ac2f52b9f08ca470.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_103541d9289072021505f76f950f88dc.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_561273dd38978212734c7416d0c7a919.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_a5ec961a3a551348f1ed80d2fcb83631.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_c8aa2cf4bb36b43bf2f6925bc72282ab.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_dffe56cec39fdf21ceac495c2b81d7f6.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_eafe12c3ab3ca01757b52dffccdfdc85.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_f4d9f653760a60985d20773800d0435b.jpg",
+                    "https://static.tixcraft.com/images/banner/mobile_9ef91d850e0d3f5716960a0728a9d3cb.png",
+                    "https://static.tixcraft.com/images/banner/mobile_25bfbcafde3079f18b0b39d46e2d9012.jpg"
+                ], { duration: 2000, fade: 750 });
+
+                // REVIEWS CAROUSEL
+                $('.reviews-carousel').owlCarousel({
+                    items: 3,
+                    loop: true,
+                    dots: false,
+                    nav: true,
+                    autoplay: true,
+                    margin: 30,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 3
+                        }
+                    }
+                })
+
+                // CUSTOM LINK
+                $('.smoothscroll').click(function () {
+                    var el = $(this).attr('href');
+                    var elWrapped = $(el);
+                    var header_height = $('.navbar').height();
+
+                    scrollToDiv(elWrapped, header_height);
+                    return false;
+
+                    function scrollToDiv(element, navheight) {
+                        var offset = element.offset();
+                        var offsetTop = offset.top;
+                        var totalScroll = offsetTop - navheight;
+
+                        $('body,html').animate({
+                            scrollTop: totalScroll
+                        }, 300);
+                    }
+                });
+
+            })(window.jQuery);
+
+
+
+        </script>
+</body>
+
+
+</html>
