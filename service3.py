@@ -46,8 +46,11 @@ def hello(service_number):
             reservationArray.append(reservation)
             
             return redirect('http://localhost:8080/service/4', code = "307")
-    return render_template('index3.html',service=os.environ['SERVICE_NAME'],hostnameOne=socket.gethostname(),hostnameTwo=socket.gethostbyname(socket.gethostname()))
-
+    else:
+        return render_template('index3.html',
+                           service=os.environ['SERVICE_NAME'],
+                           hostnameOne=socket.gethostname(),
+                           hostnameTwo=socket.gethostbyname(socket.gethostname()))
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=8080, debug=True)
