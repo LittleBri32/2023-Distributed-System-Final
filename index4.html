@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Concert | Info</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<script language="JavaScript" type="text/javascript" src="http://code.jquery.com/jquery-1.3.min.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<div class="w3-top">
+				<div class="w3-bar w3-padding w3-card" style="background-color: black; letter-spacing:4px; height: 70px;" >
+				<a href="http://127.0.0.1:5000/" class="w3-bar-item w3-button" style="color: white; font-size:20px;">拓元搶票系統</a>
+				<!-- Right-sided navbar links. Hide them on small screens -->
+				<div class="w3-right w3-hide-small">
+					<a href="http://localhost:8080/service/3" class="w3-bar-item w3-button" style="color: white; font-size:20px;">節目資訊</a>
+					<a href="http://localhost:8080/service/2" class="w3-bar-item w3-button" style="color: white; font-size:20px;">我的訂單</a>
+					<a href="http://localhost:8080/service/1" class="w3-bar-item w3-button" style="color: white; font-size:20px;">常見問題</a>
+				</div>
+				</div>
+			</div>
+
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+
+		<!-- List -->
+			<div class="w3-container" style="padding-bottom:32px;">
+                <div class="w3-content" style="max-width:700px">
+                    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide"> INFORMATION </span></h5>
+                    
+                    <div class="w3-row w3-center w3-card w3-padding">
+                        <img id="photo" src="" class="w3-image" style="width:100%">
+                        <p><span class="w3-tag">FYI!</span> {{ticketName}} </p>
+                        <p><strong>Write Down</strong> your phone number and how many tickets you want:</p>
+
+                        <form name="bookInfo" method="post">
+                            <p><input class="w3-input w3-padding-16 w3-border" type="text"      name="ticketName" ></p>
+                            <p><input class="w3-input w3-padding-16 w3-border" type="text"      name="ticketDate" ></p>
+                            <p><input class="w3-input w3-padding-16 w3-border" type="text"      name="phoneNum"   placeholder="Phone Number" pattern="[0][9][0-9]{8}" maxlength="10" minlength="10" required ></p>
+                            <p><input class="w3-input w3-padding-16 w3-border" type="number"    name="ticketNum"  placeholder="How many tickets" min="1" required ></p>
+                            <p><input class="w3-input w3-padding-16 w3-border" type="text"      name="ticketPrice"></p>
+                            <p><input class="w3-input w3-padding-16 w3-border" type="text"      name="totalPrice" placeholder="Total Price"></p>
+                            <p><input class="w3-button w3-black" type="submit" name="book"      value="BUY"></p>
+                        </form>
+                    </div>
+                </div>
+              </div>
+
+        <!-- Footer -->
+            <div class="w3-col w3-center">
+                <p class="w3-center">Copyright © 2023, NCCU </p>
+            </div>
+
+		<!-- Scripts -->
+		<script>
+            var images = {
+                'LEE SUNG KYOUNG ASIA FAN MEETING [BE CLOSER] IN TAIPEI':
+                    "https://static.tixcraft.com/images/banner/mobile_0aa9ed6de13d1814f458041a518fa2c8.jpg",
+                'Yerin Baek Asia-Pacific Tour 2023':
+                    "https://static.tixcraft.com/images/banner/mobile_0c61f5bf0fcc09d495e69caa8f185e7c.jpg",
+                '2023 FLESH TEMPLE - FIVE STAR CLUB':
+                    "https://static.tixcraft.com/images/banner/mobile_4a2c24ce6ccd696a52bc37c0c8f10039.jpg",
+                '2023 [Flight Day: Final Call] World Tour Concert - Kaohsiung Station':
+                    "https://static.tixcraft.com/images/banner/mobile_8fb143a08524e85f72969e047d5859c4.jpg",
+                'FEAR AND DREAMS World Tour Concert - Taipei Station':
+                    "https://static.tixcraft.com/images/banner/mobile_9ef91d850e0d3f5716960a0728a9d3cb.png",
+                'BILLKIN & PP KRIT Asia Fan Meeting 2023 in TAIPEI':
+                    "https://static.tixcraft.com/images/banner/mobile_391c65db0c7a11c826f370a28735b3b6.jpg",
+                'Coldplay: Music Of The Spheres World Tour - delivered by DHL':
+                    "https://static.tixcraft.com/images/banner/mobile_663a76f4ca1dcef4d4549983a7964b70.jpg",
+                'Lauv: The Between Albums Tour':
+                    "https://static.tixcraft.com/images/banner/mobile_0692a287740f078cc5df20d8e20b9d44.jpg",
+                'FUJI ROCK FESTIVAL\'23':
+                    "https://static.tixcraft.com/images/banner/mobile_723ffaf4ed233fd7263aca519e22da05.jpg",
+                'Anson Seabra: The Neverland Tour in Taipei':
+                    "https://static.tixcraft.com/images/banner/mobile_2459d4e5b9ae77e95b4d051f77142efd.jpg",
+                '2023 Taipei Badminton Open':
+                    "https://static.tixcraft.com/images/banner/mobile_20950e788a2319f9de37734e029ce5a5.png",
+                'ADOY 2023 Live Show In Taipei':
+                    "https://static.tixcraft.com/images/banner/mobile_66613af617d99a67ac2f52b9f08ca470.jpg",
+                
+            };
+
+            var ticketName = '{{ ticketName }}'.replace('&#39;', "'");
+            var ticketPrice = '{{ ticketPrice }}';
+            var ticketPriceText = 'NT$' + ticketPrice.slice(0, -3) + ',' + ticketPrice.slice(-3);
+            var totalPrice = 0;
+            var ticketNum = 0;
+
+			$(document).ready(function(){ 
+
+                // Set Value
+                $('form[name="bookInfo"]').find('input[name="ticketPrice"]').val(ticketPriceText);
+                $('form[name="bookInfo"]').find('input[name="ticketPrice"]').attr("readonly", true);
+
+                $("#photo").attr("src", images[ticketName]);
+
+                $('form[name="bookInfo"]').find('input[name="ticketName"]').val(ticketName);
+                $('form[name="bookInfo"]').find('input[name="ticketName"]').attr("readonly", true);
+
+                $('form[name="bookInfo"]').find('input[name="ticketDate"]').val('{{ ticketDate }}');
+                $('form[name="bookInfo"]').find('input[name="ticketDate"]').attr("readonly", true);
+                
+                $('form[name="bookInfo"]').find('input[name="totalPrice"]').attr("readonly", true);
+
+                // Calculate total price
+                $('form[name="bookInfo"]').find('input[name="ticketNum"]').change(function(){
+                    ticketNum = $(this).val();
+                    ticketPrice = parseInt('{{ ticketPrice }}');
+                    totalPrice = ticketNum * ticketPrice;
+
+                    $('form[name="bookInfo"]').find('input[name="totalPrice"]').attr("readonly", false);
+                    $('form[name="bookInfo"]').find('input[name="totalPrice"]').val('NT$' + totalPrice.toString().slice(0, -3) + ',' + totalPrice.toString().slice(-3));
+                    $('form[name="bookInfo"]').find('input[name="totalPrice"]').attr("readonly", true);
+                })
+
+				$('form[name="bookInfo"]').submit(function(){  
+
+                    $(this).find('input[name="ticketName"]').val(ticketName);
+                    $(this).find('input[name="ticketPrice"]').val('{{ ticketPrice }}');
+                    $(this).find('input[name="totalPrice"]').val(totalPrice);
+                    var phoneNum = $('form[name="bookInfo"]').find('input[name="phoneNum"]').val();
+					var c = confirm("Check Your Info: \nPhone Number: " + phoneNum + "\nTotal Price: " + totalPrice);
+                    return c;
+			    });  
+            })
+
+
+		</script>
+
+	</body>
+</html>
